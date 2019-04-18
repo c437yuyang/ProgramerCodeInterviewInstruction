@@ -16,13 +16,13 @@ void SlidingWindowMaxArray(int arr[], int n, int w, int maxArr[])
 	int idx = 0;
 	for (int i = 0; i != n; ++i)
 	{
-		while (!qmax.empty() && arr[i] >= arr[qmax.back()])
+		while (!qmax.empty() && arr[i] >= arr[qmax.back()]) //当前值大于队尾值，先弹出队尾，队列里面装的是可能成为最大值的值
 		{
 			qmax.pop_back();
 		}
-		qmax.push_back(i);
+		qmax.push_back(i);//队列为空或者当前值小于队列尾部，直接加到队列尾部，是可能成为最大值的值
 		
-		if (qmax.front() == i - w)
+		if (qmax.front() == i - w) //队列头部始终是最大值，然后依次从大到小排列，当队列头部超出w范围的时候，弹出
 		{
 			qmax.pop_front();
 		}

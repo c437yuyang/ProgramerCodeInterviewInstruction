@@ -10,14 +10,14 @@ void printEdge(int mat[], int m, int n, int lt_x, int lt_y, int rb_x, int rb_y)
 	while (x < rb_x)//先从左到右
 	{
 		cout << mat[lt_y*n + x] << " ";
-		x++;
+		++x;
 	}
 
 	y = lt_y;
 	while (y < rb_y)//从上到下
 	{
 		cout << mat[y*n + rb_x] << " ";
-		y++;
+		++y;
 	}
 
 	//从右到左
@@ -48,10 +48,9 @@ void spiralOrderPrint(int mat[], int m, int n)
 	}
 }
 
-
 int main()
 {
-
+	 
 	//int matrix[] = { 1, 2, 3, 4 ,
 	//					5, 6, 7, 8 ,
 	//					9, 10, 11, 12 ,
